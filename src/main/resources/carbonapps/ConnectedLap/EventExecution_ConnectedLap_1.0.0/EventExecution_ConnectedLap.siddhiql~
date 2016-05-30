@@ -28,26 +28,26 @@ define stream harddiskusage (meta_owner string, meta_deviceType string, meta_dev
 @Import('org.wso2.iot.connectedlap:1.0.0')
 define stream connectedlap (meta_owner string, meta_deviceId string, meta_type string, meta_timestamp long, batteryusage float, chargerpluggedin bool, cpuusage float, networktraffic float ,memoryusage float ,harddiskusage float );
 
-from connectedlap
+from connectedlap[meta_type == 'batteryusage']
 select meta_owner, 'connectedlap' as meta_deviceType, meta_deviceId, meta_timestamp as meta_time, batteryusage
 insert into batteryusage;
 
-from connectedlap
+from connectedlap[meta_type == 'chargerpluggedin']
 select meta_owner, 'connectedlap' as meta_deviceType, meta_deviceId, meta_timestamp as meta_time, chargerpluggedin
 insert into chargerpluggedin;
 
-from connectedlap
+from connectedlap[meta_type == 'cpuusage']
 select meta_owner, 'connectedlap' as meta_deviceType, meta_deviceId, meta_timestamp as meta_time, cpuusage
 insert into cpuusage;
 
-from connectedlap
+from connectedlap[meta_type == 'networktraffic']
 select meta_owner, 'connectedlap' as meta_deviceType, meta_deviceId, meta_timestamp as meta_time, networktraffic
 insert into networktraffic;
 
-from connectedlap
+from connectedlap[meta_type == 'memoryusage']
 select meta_owner, 'connectedlap' as meta_deviceType, meta_deviceId, meta_timestamp as meta_time, memoryusage
 insert into memoryusage;
 
-from connectedlap
+from connectedlap[meta_type == 'harddiskusage']
 select meta_owner, 'connectedlap' as meta_deviceType, meta_deviceId, meta_timestamp as meta_time, harddiskusage
 insert into harddiskusage;
