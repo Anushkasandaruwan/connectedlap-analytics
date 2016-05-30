@@ -40,7 +40,7 @@
         "ORG_WSO2_IOT_CHARGER_PLUGGED_IN");
 
         CREATE TEMPORARY TABLE DeviceChargerpluggedinSummaryData USING CarbonAnalytics OPTIONS (tableName
-        "DEVICE_CHARGER_PLUGGED_IN_SUMMARY", schema "chargerpluggedin FLOAT, deviceType STRING -i, deviceId STRING -i, owner
+        "DEVICE_CHARGER_PLUGGED_IN_SUMMARY", schema "chargerpluggedin BOOL, deviceType STRING -i, deviceId STRING -i, owner
         STRING -i,
         time LONG -i",primaryKeys "deviceType, deviceId, owner, time");
 
