@@ -11,7 +11,7 @@
   ],
   "payloadData": [
     {"name": "batteryusage", "type": "FLOAT"},
-    {"name": "chargerpluggedin", "type": "FLOAT"},
+    {"name": "chargerpluggedin", "type": "BOOL"},
     {"name": "cpuusage", "type": "FLOAT"},
     {"name": "networktraffic", "type": "FLOAT"},
     {"name": "memoryusage", "type": "FLOAT"},
