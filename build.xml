@@ -25,7 +25,12 @@
 
 
     <property name="ConnectedLap_dir" value="ConnectedLap"/>
-
+    <property name="ConnectedLapBatteryUsage_dir" value="ConnectedLapBatteryUsage"/>
+    <property name="ConnectedLapChargerPluggedIn_dir" value="ConnectedLapChargerPluggedIn"/>
+    <property name="ConnectedLapCpuUsage_dir" value="ConnectedLapCpuUsage"/>
+    <property name="ConnectedLapHardDiskUsage_dir" value="ConnectedLapHardDiskUsage"/>
+    <property name="ConnectedLapMemoryUsage_dir" value="ConnectedLapMemoryUsage"/>
+    <property name="ConnectedLapNetworkTraffic_dir" value="ConnectedLapNetworkTraffic"/>
 
     <target name="clean">
         <delete dir="${target-dir}" />
@@ -37,6 +42,31 @@
         <zip destfile="${target-dir}/${ConnectedLap_dir}.car">
             <zipfileset dir="${src-dir}/${ConnectedLap_dir}"/>
         </zip>
+       
+	 <zip destfile="${target-dir}/${ConnectedLapBatteryUsage_dir}.car">
+            <zipfileset dir="${src-dir}/${ConnectedLapBatteryUsage_dir}"/>
+        </zip>
+
+	 <zip destfile="${target-dir}/${ConnectedLapChargerPluggedIn_dir}.car">
+            <zipfileset dir="${src-dir}/${ConnectedLapChargerPluggedIn_dir}"/>
+        </zip>
+
+	 <zip destfile="${target-dir}/${ConnectedLapCpuUsage_dir}.car">
+            <zipfileset dir="${src-dir}/${ConnectedLapCpuUsage_dir}"/>
+        </zip>
+
+	 <zip destfile="${target-dir}/${ConnectedLapHardDiskUsage_dir}.car">
+            <zipfileset dir="${src-dir}/${ConnectedLapHardDiskUsage_dir}"/>
+        </zip>
+
+	<zip destfile="${target-dir}/${ConnectedLapMemoryUsage_dir}.car">
+            <zipfileset dir="${src-dir}/${ConnectedLapMemoryUsage_dir}"/>
+        </zip>
+
+	<zip destfile="${target-dir}/${ConnectedLapNetworkTraffic_dir}.car">
+            <zipfileset dir="${src-dir}/${ConnectedLapNetworkTraffic_dir}"/>
+        </zip>
+
     </target>
 
 </project>

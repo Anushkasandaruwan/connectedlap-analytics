@@ -19,10 +19,17 @@
 
 <artifacts>
     <artifact name="ConnectedLap_CAPP" version="1.0.0" type="carbon/application">
-        <dependency artifact="EventExecution_ConnectedLap" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
-	<dependency artifact="EventStream_ConnectedLap" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
-	<dependency artifact="EventReceiver_ConnectedLap" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
+		<dependency artifact="EventStream_ConnectedLap" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
+		<dependency artifact="EventReceiver_ConnectedLap" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
         <dependency artifact="EventPublisher_ConnectedLap" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
+        <dependency artifact="EventExecution_ConnectedLap" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
+        <dependency artifact="EventStream_ConnectedLap_NetworkTraffic" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
+        <dependency artifact="EventStream_ConnectedLap_MemoryUsage" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
+        <dependency artifact="EventStream_ConnectedLap_HardDiskUsage" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
+        <dependency artifact="EventStream_ConnectedLap_CpuUsage" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
+        <dependency artifact="EventStream_ConnectedLap_ChargerPluggedIn" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
+        <dependency artifact="EventStream_ConnectedLap_BatteryUsage" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
+	<dependency artifact="Eventstore_batteryusage" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
         <dependency artifact="Sparkscripts" version="1.0.0" include="true" serverRole="DataAnalyticsServer"/>
     </artifact>
 </artifacts>

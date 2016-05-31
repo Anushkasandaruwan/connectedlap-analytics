@@ -10,11 +10,10 @@
 define stream batteryusage (meta_owner string, meta_deviceType string, meta_deviceId string, meta_time long, batteryusage float);
 
 @Export('org.wso2.iot.devices.charger.plugged.in:1.0.0')
-define stream chargerpluggedin (meta_owner string, meta_deviceType string, meta_deviceId string, meta_time long, chargerpluggedin bool);
+define stream chargerpluggedin (meta_owner string, meta_deviceType string, meta_deviceId string, meta_time long, chargerpluggedin float);
 
 @Export('org.wso2.iot.devices.cpu.usage:1.0.0')
 define stream cpuusage (meta_owner string, meta_deviceType string, meta_deviceId string, meta_time long, cpuusage float);
-
 
 @Export('org.wso2.iot.devices.network.traffic:1.0.0')
 define stream networktraffic (meta_owner string, meta_deviceType string, meta_deviceId string, meta_time long, networktraffic float);
@@ -26,28 +25,28 @@ define stream memoryusage (meta_owner string, meta_deviceType string, meta_devic
 define stream harddiskusage (meta_owner string, meta_deviceType string, meta_deviceId string, meta_time long, harddiskusage float);
 
 @Import('org.wso2.iot.connectedlap:1.0.0')
-define stream connectedlap (meta_owner string, meta_deviceId string, meta_type string, meta_timestamp long, batteryusage float, chargerpluggedin bool, cpuusage float, networktraffic float ,memoryusage float ,harddiskusage float );
+define stream connectedlap (meta_owner string, meta_deviceId string, meta_type string, meta_timestamp long, batteryusage float, chargerpluggedin float, cpuusage float, networktraffic float ,memoryusage float ,harddiskusage float );
 
-from connectedlap[meta_type == 'batteryusage']
+from connectedlap
 select meta_owner, 'connectedlap' as meta_deviceType, meta_deviceId, meta_timestamp as meta_time, batteryusage
 insert into batteryusage;
 
-from connectedlap[meta_type == 'chargerpluggedin']
+from connectedlap
 select meta_owner, 'connectedlap' as meta_deviceType, meta_deviceId, meta_timestamp as meta_time, chargerpluggedin
 insert into chargerpluggedin;
 
-from connectedlap[meta_type == 'cpuusage']
+from connectedlap
 select meta_owner, 'connectedlap' as meta_deviceType, meta_deviceId, meta_timestamp as meta_time, cpuusage
 insert into cpuusage;
 
-from connectedlap[meta_type == 'networktraffic']
+from connectedlap
 select meta_owner, 'connectedlap' as meta_deviceType, meta_deviceId, meta_timestamp as meta_time, networktraffic
 insert into networktraffic;
 
-from connectedlap[meta_type == 'memoryusage']
+from connectedlap
 select meta_owner, 'connectedlap' as meta_deviceType, meta_deviceId, meta_timestamp as meta_time, memoryusage
 insert into memoryusage;
 
-from connectedlap[meta_type == 'harddiskusage']
+from connectedlap
 select meta_owner, 'connectedlap' as meta_deviceType, meta_deviceId, meta_timestamp as meta_time, harddiskusage
 insert into harddiskusage;
